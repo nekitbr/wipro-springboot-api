@@ -7,6 +7,8 @@ https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share
 - Clone repository
 - Open the project on your IDE
 - Download maven dependencies
+- Create an application.properties under main.resources (the .example is ready-to-go, just rename it)
+- Create an application.properties under test.resources (the .example is ready-to-go, just rename it)
 
 ### To run the project:
 - Run main.java.com.jose.api.ApiApplication to start your spring-boot service
@@ -24,6 +26,7 @@ https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share
 # Routes  
 * BasePath is "/v1"
 
-| Method  | Path |
-| ------------- | ------------- |
-| POST  | /v1/consulta-endereco |
+| Method  | Path | Description |
+| ------------- | ------------- | ----------- |
+| POST  | /v1/consulta-endereco | Returns address info based on given cep code |
+| GET  | /v1/api-docs | Swagger based API Documentation |
