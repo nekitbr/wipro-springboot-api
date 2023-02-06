@@ -8,7 +8,6 @@ https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share
 - Open the project on your IDE
 - Download maven dependencies
 - Create an application.properties under main.resources (the .example is ready-to-go, just rename it)
-- Create an application.properties under test.resources (the .example is ready-to-go, just rename it)
 
 ### To run the project:
 - Run main.java.com.jose.api.ApiApplication to start your spring-boot service
@@ -28,9 +27,10 @@ https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share
 - run "mvn clean package spring-boot:repackage"
 
 # Routes  
+* Default port is 8080  
 * BasePath is "/v1"
 
 | Method  | Path | Description |
 | ------------- | ------------- | ----------- |
-| POST  | /v1/consulta-endereco | Returns address info based on given cep code |
-| GET  | /v1/api-docs | Swagger based API Documentation |
+| POST  | /consulta-endereco | Returns address info based on given cep code |
+| GET  | /api-docs | Swagger based API Documentation |
