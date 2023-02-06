@@ -1,36 +1,35 @@
 # Getting Started
-* Reference Documentation
-https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share_link
+Reference Documentation: https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share_link  
+This project is a Maven-based Spring Boot application that requires Java 11 to be installed. To get started, follow these steps:
 
-## Setup:
-- Download java version 11
-- Clone repository
-- Open the project on your IDE
-- Download maven dependencies
-- Create an application.properties under main.resources (the .example is ready-to-go, just rename it)
+## Setup
+1. Download Java SDK 11
+2. Clone the repository
+3. Open the project in your IDE
+4. Download Maven dependencies
+5. Create an `application.properties` file under `main.resources`. The `.example` file is ready-to-go, simply rename it.
 
-### To run the project:
-- Run main.java.com.jose.api.ApiApplication to start your spring-boot service
+## Running the Project
+You have two options to run the project:
+1. Run `main.java.com.jose.api.ApiApplication` to start the Spring Boot service
+2. Run the latest JAR release from the `releases` directory
 
-### To run the BDD tests:
-- Run test.java.resources.com.jose.api.bdd.features.*
+## Running Tests
+To run the tests, you can:
+1. BDD Tests: run test classes in the `test.java.resources.com.jose.api.bdd.features.*` package
+2. TDD Tests: run test classes in the `test.java.com.jose.api.tdd.controller.*` package
+3. All Tests (using IntelliJ): right-click on `test.java` -> Run 'Tests' in 'Java'  
+![image](https://user-images.githubusercontent.com/69054878/216898060-eb29c754-aaff-457a-a19a-93249f0033bd.png)
 
-### To run the TDD tests:
-- Run test.java.com.jose.api.tdd.controller.*
+## Building the Application
+There's already a release version available on Github, but you can build the application by running:
+`mvn clean package spring-boot:repackage`  
 
-### To run all tests (with intelliJ):
-- Right click on test.java -> Run 'Tests' in 'Java'  
-![image](https://user-images.githubusercontent.com/69054878/216855164-e029e3a9-f603-4930-8f80-f64d6a05c66e.png)
+# Routes
+The application runs by default on port 8080 and the base path is `/v1`.  
+The available routes are:
 
-### To build the application:
-* There's already a release version on github, but here's how it's done:
-- run "mvn clean package spring-boot:repackage"
-
-# Routes  
-* Default port is 8080  
-* BasePath is "/v1"
-
-| Method  | Path | Description |
-| ------------- | ------------- | ----------- |
-| POST  | /consulta-endereco | Returns address info based on given cep code |
-| GET  | /api-docs | Swagger based API Documentation |
+| Method | Path | Description |
+| ------ | ---- | ----------- |
+| POST   | /consulta-endereco | Returns address information based on the given CEP code |
+| GET    | /api-docs | Swagger-based API documentation |
