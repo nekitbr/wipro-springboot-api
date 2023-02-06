@@ -23,6 +23,10 @@ https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share
 - Right click on test.java -> Run 'Tests' in 'Java'  
 ![image](https://user-images.githubusercontent.com/69054878/216855164-e029e3a9-f603-4930-8f80-f64d6a05c66e.png)
 
+### To build the application:
+* There's already a release version on github, but here's how it's done:
+- run "mvn clean package spring-boot:repackage"
+
 # Routes  
 * BasePath is "/v1"
 
