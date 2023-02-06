@@ -19,11 +19,6 @@ public class EnderecoController {
     @Value("server.servlet.context-path")
     private String API_BASE;
 
-    @GetMapping
-    public String testing() {
-        return "oi";
-    }
-
     @PostMapping
     public ConsultarEnderecoResponse consultarEndereco(
             @Valid @RequestBody ConsultarEnderecoRequest body
