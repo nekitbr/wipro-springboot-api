@@ -1,18 +1,29 @@
 # Getting Started
+* Reference Documentation
+https://drive.google.com/file/d/1GN7PR7IE3szQ5ht7wvLJ3rMDVsTOP1Fr/view?usp=share_link
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## Setup:
+- Download java version 11
+- Clone repository
+- Open the project on your IDE
+- Download maven dependencies
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.8/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.8/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.8/reference/htmlsingle/#using.devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.8/reference/htmlsingle/#web)
+### To run the project:
+- Run main.java.com.jose.api.ApiApplication to start your spring-boot service
 
-### Guides
-The following guides illustrate how to use some features concretely:
+### To run the BDD tests:
+- Run test.java.resources.com.jose.api.bdd.features.*
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+### To run the TDD tests:
+- Run test.java.com.jose.api.tdd.controller.*
 
+### To run all tests (with intelliJ):
+- Right click on test.java -> Run 'Tests' in 'Java'  
+![image](https://user-images.githubusercontent.com/69054878/216855164-e029e3a9-f603-4930-8f80-f64d6a05c66e.png)
+
+# Routes  
+* BasePath is "/v1"
+
+| Method  | Path |
+| ------------- | ------------- |
+| POST  | /v1/consulta-endereco |
