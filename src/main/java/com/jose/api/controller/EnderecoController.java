@@ -23,12 +23,11 @@ public class EnderecoController {
     public ConsultarEnderecoResponse consultarEndereco(
             @Valid @RequestBody ConsultarEnderecoRequest body
     ) {
-        System.out.println(body.toString());
-        if(!NumberUtils.isParsable(body.getCep())) {
+        String unmaskedCep = CEPUtils.removeMascaraCep(body.getCep());
+
+        if(!NumberUtils.isParsable(unmaskedCep)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Field cep must have numbers only.");
         }
-
-        String unmaskedCep = CEPUtils.removeMascaraCep(body.getCep());
 
         if (unmaskedCep.length() > 8) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Field cep has too many characters.");
@@ -37,7 +36,7 @@ public class EnderecoController {
         Cep cepInfo = ViaCepClient.findCep(unmaskedCep);
 
         if(cepInfo.getCep() == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Addres info for given cep was not found.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Address info for given cep was not found.");
         }
 
         return new ConsultarEnderecoResponse(cepInfo);
