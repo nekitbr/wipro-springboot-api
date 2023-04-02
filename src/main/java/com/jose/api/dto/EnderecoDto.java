@@ -1,5 +1,7 @@
 package com.jose.api.dto;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gtbr.domain.Cep;
 import com.jose.api.enums.Frete;
 import com.jose.api.enums.UF;
@@ -25,5 +27,9 @@ public class EnderecoDto {
         this.cidade = viaCepResponse.getLocalidade();
         this.estado = viaCepResponse.getUf();
         this.frete = Frete.fromRegiao(UF.fromSigla(viaCepResponse.getUf()).regiao()).preco();
+    }
+
+    public String toJson() throws JsonProcessingException {
+        return new ObjectMapper().writeValueAsString(this);
     }
 }

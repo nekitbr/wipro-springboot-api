@@ -13,6 +13,11 @@ public class CepDto {
     @Pattern(regexp = "^[0-9]{5}-?[0-9]{3}$", message = "Invalid CEP format.")
     String cep;
 
+    public CepDto() {}
+    public CepDto(String cep) {
+        this.cep = cep;
+    }
+
     public String toJson() throws JsonProcessingException {
         return new ObjectMapper().writeValueAsString(this);
     }

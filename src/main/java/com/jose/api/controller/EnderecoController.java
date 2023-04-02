@@ -6,6 +6,7 @@ import com.jose.api.dto.EnderecoDto;
 import com.jose.api.services.ICepService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/consulta-endereco")
 @CrossOrigin
 public class EnderecoController {
     @Autowired
@@ -23,7 +24,7 @@ public class EnderecoController {
 
     @Operation(description = "Retorna um endereço através de um CEP")
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping(value= "/consulta-endereco", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EnderecoDto> consultarEndereco(
             @Valid @RequestBody CepDto dto
     ) throws ResponseStatusException {
@@ -32,7 +33,7 @@ public class EnderecoController {
         Cep cepInfo = cepService.findCep(unmaskedCep);
 
         if(cepInfo.getCep() == null) {
-            return new ResponseEntity("CEP not found.", HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(
