@@ -74,6 +74,6 @@ public class ConsultarEnderecoStepsDefinition {
         String responseBody = this.mvcResult.getResponse().getContentAsString(StandardCharsets.UTF_8);
         EnderecoDto enderecoDto = new ObjectMapper().readValue(responseBody, EnderecoDto.class);
 
-        Assert.assertTrue(expectedEnderecoDto.equals(enderecoDto));
+        Assert.assertEquals(expectedEnderecoDto, enderecoDto);
     }
 }
