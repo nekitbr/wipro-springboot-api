@@ -1,4 +1,4 @@
-package com.jose.api.dto.enums;
+package com.jose.api.enums;
 
 public enum UF {
     AMAZONAS("Amazonas", "AM", "Manaus", Regioes.NORTE),

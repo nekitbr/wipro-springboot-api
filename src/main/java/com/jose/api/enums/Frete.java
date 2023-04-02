@@ -1,4 +1,4 @@
-package com.jose.api.dto.enums;
+package com.jose.api.enums;
 
 public enum Frete {
     SUDESTE(Regioes.SUDESTE, 7.85),
